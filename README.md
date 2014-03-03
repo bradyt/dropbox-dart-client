@@ -17,4 +17,4 @@ Simple usage
 	
 	var file = new File("/home/manuel/tothemooooon.png");
 	var content = file.readAsBytesSync();
-	contentClient.uploadFile(path: "tpthemooooon.png", content: content);
+	contentClient.uploadFile(path: "tothemooooon.png", content: content);
