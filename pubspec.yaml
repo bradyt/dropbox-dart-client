@@ -1,7 +1,10 @@
 name: dropbox
-description: Dropopbox api client
 author: Manuel Mazzuola <manuel.mazzuola@gmail.com>
-homepage:
-version: 0.1
-#dependencies:
-#  unittest: any
+version: 0.0.1
+description: Dropopbox api client
+dependencies:
+  http: any
+  json_object: any
+  oauth2:
+    path: /home/manuel/src/dart-repo/dart-repo/dart/pkg/oauth2
+  unittest: any
