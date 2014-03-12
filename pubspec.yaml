@@ -1,10 +1,10 @@
 name: dropbox
 author: Manuel Mazzuola <manuel.mazzuola@gmail.com>
-version: 0.0.1
-description: Dropopbox api client
+version: 0.0.5
+description: Dropbox RESTful api client
+homepage: https://github.com/manuelmazzuola/dropbox-dart-client
 dependencies:
   http: any
   json_object: any
-  oauth2:
-    path: /home/manuel/src/dart-repo/dart-repo/dart/pkg/oauth2
+  oauth2: any
   unittest: any
