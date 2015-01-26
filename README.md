@@ -3,19 +3,7 @@ dropbox-dart-client
 
 A RESTful dropbox client written in dart
 
-__You need the bleeding edge oath2 pkg__
-Clone the bleeding edge repo and symlink oauth2 folder in the root folder of this lib.
-
-https://github.com/dart-lang/bleeding_edge/tree/master/dart/pkg/oauth2
-
-Then change the dependency:
-
-
-oauth2:
-
-  path: oauth2
-
-
+@ your own risk !!!
 
 Simple usage
 
