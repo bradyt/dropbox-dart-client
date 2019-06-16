@@ -6,7 +6,7 @@ class ServiceClient {
 
   ServiceClient(this._endpoint, this._client);
 
-  Future<JsonObject> getMedatada(
+  Future getMedatada(
       {String root: "dropbox", String path: "", String locale: "en"}) {
     var completer = new Completer();
     var fields = new Map();
@@ -19,7 +19,7 @@ class ServiceClient {
     _client.then((_) {
       _.send(req).then((response) {
         response.stream.bytesToString().then((responseText) {
-          var jo = new JsonObject.fromJsonString(responseText);
+          var jo = json.decode(responseText);
           completer.complete(jo);
         });
       });
@@ -28,7 +28,7 @@ class ServiceClient {
     return completer.future;
   }
 
-  Future<JsonObject> getAccountInfo({String locale: "en"}) {
+  Future getAccountInfo({String locale: "en"}) {
     var completer = new Completer();
     var fields = new Map();
     fields['locale'] = locale;
@@ -40,7 +40,7 @@ class ServiceClient {
     _client.then((_) {
       _.send(req).then((response) {
         response.stream.bytesToString().then((responseText) {
-          var jo = new JsonObject.fromJsonString(responseText);
+          var jo = json.decode(responseText);
           completer.complete(jo);
         });
       });
@@ -49,7 +49,7 @@ class ServiceClient {
     return completer.future;
   }
 
-  Future<JsonObject> getDeltaEntries(
+  Future getDeltaEntries(
       {String cursor, String locale: "en", String path_prefix: null}) {
     var completer = new Completer();
     var fields = new Map();
@@ -64,7 +64,7 @@ class ServiceClient {
     _client.then((_) {
       _.send(req).then((response) {
         response.stream.bytesToString().then((responseText) {
-          var jo = new JsonObject.fromJsonString(responseText);
+          var jo = json.decode(responseText);
           completer.complete(jo);
         });
       });

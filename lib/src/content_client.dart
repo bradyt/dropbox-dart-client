@@ -6,7 +6,7 @@ class ContentClient {
 
   ContentClient(this._endpoint, this._client);
 
-  Future<JsonObject> downloadFile(
+  Future downloadFile(
       {String root: "dropbox",
       String path,
       String locale: "en",
@@ -23,7 +23,7 @@ class ContentClient {
     _client.then((_) {
       _.send(req).then((response) {
         response.stream.bytesToString().then((responseText) {
-          var jo = new JsonObject.fromJsonString(responseText);
+          var jo = json.decode(responseText);
           completer.complete(jo);
         });
       });
@@ -32,7 +32,7 @@ class ContentClient {
     return completer.future;
   }
 
-  Future<JsonObject> uploadFile(
+  Future uploadFile(
       {String root: "dropbox",
       String path,
       String locale: "en",
@@ -50,7 +50,7 @@ class ContentClient {
     _client.then((_) {
       _.send(req).then((response) {
         response.stream.bytesToString().then((responseText) {
-          var jo = new JsonObject.fromJsonString(responseText);
+          var jo = json.decode(responseText);
           completer.complete(jo);
         });
       });
