@@ -17,7 +17,7 @@ class Dropbox {
 
   Map _intro() {
     var oauth2Attributes = new Map();
-    oauth2Attributes['redirect'] = "https://localhost";
+    oauth2Attributes['redirect'] = "http://localhost";
 
     print("This library uses the oauth2 authentication system.");
     print(
@@ -41,8 +41,9 @@ class Dropbox {
     // Retrieving oauth2 url
     print("Go to:");
     var grant = new oauth2.AuthorizationCodeGrant(
-        o2['key'], o2['secret'], authorizationEndpoint, tokenEndpoint);
-    print(grant.getAuthorizationUrl(o2['redirect']).toString());
+        o2['key'], authorizationEndpoint, tokenEndpoint,
+        secret: o2['secret']);
+    print(grant.getAuthorizationUrl(Uri.parse(o2['redirect'])));
 
     print(
         "Insert the full redirect url like ${o2['redirect']}/?code=something:");
