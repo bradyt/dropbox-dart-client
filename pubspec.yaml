@@ -5,6 +5,5 @@ description: Dropbox RESTful api client
 homepage: https://github.com/manuelmazzuola/dropbox-dart-client
 dependencies:
   http: any
-  json_object: any
   oauth2: any
-  unittest: any
+  test:
